@@ -1,10 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/screens/home/widgets/hero_widget.dart';
 
 class WeightGainScreen extends StatelessWidget {
-  const WeightGainScreen({super.key});
+  final String label;
+  final String imageUrl;
+  
+  const WeightGainScreen({super.key, required this.label, required this.imageUrl});
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(backgroundColor: Colors.transparent, elevation: 0),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          HeroWidget(tag: label, imageUrl: imageUrl), 
+          Padding(
+            padding: EdgeInsets.all(20),
+            child: Text('Welcome to $label!', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+          ),
+        ],
+      ),
+    );
   }
 }

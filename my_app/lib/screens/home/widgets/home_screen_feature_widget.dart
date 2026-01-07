@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'hero_widget.dart';
 
 class HomeScreenFeatureWidget extends StatelessWidget {
   final IconData icon;
   final String label;
   final String imageUrl;
   final VoidCallback onTap;
+
   const HomeScreenFeatureWidget({
     super.key,
     required this.icon,
@@ -36,10 +38,7 @@ class HomeScreenFeatureWidget extends StatelessWidget {
               padding: const EdgeInsets.only(left: 20),
               child: Row(
                 children: [
-                  CircleAvatar(
-                    radius: 30,
-                    backgroundImage: NetworkImage(imageUrl),
-                  ),
+                  HeroWidget(tag: label, imageUrl: imageUrl, radius: 30),
                   Padding(
                     padding: const EdgeInsets.only(left: 20),
                     child: Row(
